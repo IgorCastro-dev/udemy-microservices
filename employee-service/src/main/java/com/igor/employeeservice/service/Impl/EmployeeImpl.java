@@ -60,7 +60,10 @@ public class EmployeeImpl implements EmployeeService{
 //		ResponseEntity<DepartmentDto> responseEntity = restTemplate.getForEntity("http://localhost:8081/api/departments/"+employee.getDepartmentCode(),DepartmentDto.class );  
 //		DepartmentDto departmentDto = responseEntity.getBody();
 		
-		DepartmentDto departmentDto = apiClient.findDepartmentByCode(employeeDto.getDepartmentCode());
+		
+		DepartmentDto departmentDto =  apiClient.findDepartmentByCode(employeeDto.getDepartmentCode());
+		
+		System.out.println("departmentdto" + departmentDto);
 		
 		ApiResponseDto apiResponseDto = ApiResponseDto.builder()
 													.employeeDto(employeeDto)

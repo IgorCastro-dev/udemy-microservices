@@ -22,15 +22,15 @@ public class GlobalExceptionHandler {
 		return new ResponseEntity<>(erroDetails,HttpStatus.NOT_FOUND);
 	}
 	
-	@ExceptionHandler(Exception.class)
-	public ResponseEntity<ErroDetails> handleException(Exception exception,WebRequest webRequest){
-		ErroDetails erroDetails = ErroDetails.builder()
-											.timesTamp(LocalDateTime.now())
-											.message(exception.getMessage())
-											.path(webRequest.getDescription(false))
-											.erroCode("INTERNAL_SERVER_ERROR")
-											.build();
-		return new ResponseEntity<>(erroDetails,HttpStatus.INTERNAL_SERVER_ERROR);
+//	@ExceptionHandler(Exception.class)
+//	public ResponseEntity<ErroDetails> handleException(Exception exception,WebRequest webRequest){
+//		ErroDetails erroDetails = ErroDetails.builder()
+//											.timesTamp(LocalDateTime.now())
+//											.message(exception.getMessage())
+//											.path(webRequest.getDescription(false))
+//											.erroCode("INTERNAL_SERVER_ERROR")
+//											.build();
+//		return new ResponseEntity<>(erroDetails,HttpStatus.INTERNAL_SERVER_ERROR);
 		
-	}
+//	}
 }
