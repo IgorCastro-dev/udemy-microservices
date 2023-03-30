@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.igor.employeeservice.dto.DepartmentDto;
 
 @FeignClient(name = "DEPARTMENT-SERVICE")
-public interface ApiClient {
+public interface ApiClientDepartment {
 	@GetMapping("api/departments/{code}")
 	DepartmentDto findDepartmentByCode(@PathVariable("code") String departmentCode);
+	
 }
